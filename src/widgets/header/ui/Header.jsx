@@ -3,6 +3,7 @@ import toast, { Toaster } from 'react-hot-toast'
 import { BurgerIcon, CartIcon, ProfileIcon } from '../../../shared/ui/Icons'
 import { SearchInput } from '../../../shared/ui/InputFields'
 import { MenuItem } from './MenuItem'
+import { Link } from 'react-router-dom'
 
 const notify = () => toast.error('Sorry! It does`t work. Soon!')
 
@@ -15,7 +16,7 @@ export const Header = () => {
 						<SearchInput />
 					</div>
 					<div className='font-ibm font-normal text-2xl text-dark-hard'>
-						Avion
+						<Link to={'/'}>Avion</Link>
 					</div>
 					<div
 						className='flex justify-between items-center cursor-pointer gap-4'
