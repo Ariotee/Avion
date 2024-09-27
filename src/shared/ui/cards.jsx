@@ -3,8 +3,8 @@ import { TypographyH2 } from './typography'
 
 export const Card = obj => {
 	return (
-		<li className=''>
-			<img className='mb-4' src={obj.imgSrc} alt={obj.alt} />
+		<li className='flex flex-col gap-[14px]'>
+			<img className='w-6 h-6' src={obj.imgSrc} alt={obj.alt} />
 			<div className='flex flex-col gap-2'>
 				<TypographyH2 color={'text-dark-primary'} size={'text-[20px]'}>
 					{obj.title}
