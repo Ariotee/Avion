@@ -1,15 +1,31 @@
+import { Swiper, SwiperSlide } from 'swiper/react'
+import { useMediaQuery } from 'react-responsive'
 import { Link } from 'react-router-dom'
+
 import { Button } from '../../../shared/ui/buttons'
 import { Textarea } from '../../../shared/ui/textarea'
 import { TypographyH2 } from '../../../shared/ui/typography'
-import { Card } from '../../../shared/ui/cards'
+import { Card, CardProduct } from '../../../shared/ui/cards'
 
-import { getDataCardBrand } from '../../../entities/Item-list'
+import {
+	getDataCardBrand,
+	getDataCardProduct,
+	getDataCardPopularProduct,
+} from '../../../entities/Item-list'
+
+// Import Swiper styles
+import 'swiper/css'
 
 import HeroIll from '../images/heroILL.png'
 
 export const Home = () => {
 	const dataMake = getDataCardBrand
+	const dataProduct = getDataCardProduct
+	const dataPopularProduct = getDataCardPopularProduct
+
+	const screenSM = useMediaQuery({
+		query: '(max-width: 640px)',
+	})
 
 	return (
 		<main className='my-[60px] max-sm:my-0 max-md:my-[15px]'>
@@ -27,6 +43,7 @@ export const Home = () => {
 								>
 									The furniture brand for the future, with timeless designs
 								</TypographyH2>
+
 								<Link to={'/collection'} className='mt-10 block max-sm:hidden'>
 									<Button
 										pp_res={'max-xl:py-3 max-xl:px-6'}
@@ -37,7 +54,13 @@ export const Home = () => {
 									</Button>
 								</Link>
 							</div>
-							<div className='mt-[90px] w-11/12 max-[500px]:text-left max-sm:mt-8 max-[915px]:w-full max-sm:text-center max-md:hidden max-sm:block'>
+							<div
+								className='mt-[90px] w-11/12 
+										   max-[500px]:text-left 
+										   max-[915px]:w-full
+										   max-sm:mt-8  max-sm:text-center max-sm:block
+										   max-md:hidden'
+							>
 								<Textarea
 									res={'max-lg:text-base'}
 									color={'text-white'}
@@ -76,6 +99,7 @@ export const Home = () => {
 							What makes our brand different
 						</TypographyH2>
 					</div>
+
 					<div className='max-xl:flex max-xl:justify-center'>
 						<ul
 							className='grid grid-cols-4 grid-rows-1 gap-[60px] justify-center items-center 
@@ -84,9 +108,101 @@ export const Home = () => {
 						>
 							{dataMake?.map((obj, i) => (
 								// ...obj - передача пропса
-								<Card key={i} {...obj} />
+								<Card size={'w-6 h-6'} key={i} {...obj} />
 							))}
 						</ul>
+					</div>
+				</div>
+			</section>
+
+			<section className='mt-[152px]'>
+				<div className='container'>
+					<div className='max-xl:text-center'>
+						<TypographyH2
+							color={'text-dark-primary'}
+							size={'text-[32px]'}
+							res={'max-sm:text-[28px]'}
+						>
+							New ceramics
+						</TypographyH2>
+					</div>
+
+					<div className='max-xl:flex max-xl:justify-center'>
+						<ul
+							className='grid grid-cols-4 grid-rows-1 gap-[60px] justify-center items-center mt-[30px]
+								   max-xl:grid-cols-2 max-xl:grid-rows-2 max-xl:gap-y-7
+								   max-sm:grid-cols-1 max-sm:grid-rows-1'
+						>
+							{dataProduct?.map((obj, i) => (
+								<CardProduct key={i} {...obj} />
+							))}
+						</ul>
+					</div>
+
+					<div className='flex justify-center mt-[35px]'>
+						<Link
+							to={'/collection'}
+							className='flex justify-center mt-10 w-11/12'
+						>
+							<Button
+								res={'max-xl:py-3 max-xl:px-6 max-[500px]:w-11/12'}
+								bg_color={'bg-light-gray'}
+								text_color={'text-dark-primary'}
+							>
+								View collection
+							</Button>
+						</Link>
+					</div>
+				</div>
+			</section>
+
+			<section className='mt-[120px]'>
+				<div className='container'>
+					<div className='max-xl:text-center'>
+						<TypographyH2
+							color={'text-dark-primary'}
+							size={'text-[32px]'}
+							res={'max-sm:text-[28px]'}
+						>
+							Our popular products
+						</TypographyH2>
+					</div>
+
+					{screenSM ? (
+						<Swiper>
+							{dataPopularProduct?.map((obj, i) => (
+								<SwiperSlide key={i}>
+									<CardProduct {...obj} />
+								</SwiperSlide>
+							))}
+						</Swiper>
+					) : (
+						<div className='max-xl:flex max-xl:justify-center'>
+							<ul
+								className='grid grid-cols-4 grid-rows-1 gap-[60px] justify-center items-center mt-[30px]
+								   max-xl:grid-cols-2 max-xl:grid-rows-2 max-xl:gap-y-7
+								   max-sm:grid-cols-1 max-sm:grid-rows-1'
+							>
+								{dataPopularProduct?.map((obj, i) => (
+									<CardProduct key={i} {...obj} />
+								))}
+							</ul>
+						</div>
+					)}
+
+					<div className='flex justify-center mt-[35px]'>
+						<Link
+							to={'/collection'}
+							className='flex justify-center mt-10 w-11/12'
+						>
+							<Button
+								res={'max-xl:py-3 max-xl:px-6 max-[500px]:w-11/12'}
+								bg_color={'bg-light-gray'}
+								text_color={'text-dark-primary'}
+							>
+								View collection
+							</Button>
+						</Link>
 					</div>
 				</div>
 			</section>
