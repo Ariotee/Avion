@@ -27,6 +27,8 @@ export const Home = () => {
 		query: '(max-width: 640px)',
 	})
 
+	// const CustomSwiper = new Swiper()
+
 	return (
 		<main className='my-[60px] max-sm:my-0 max-md:my-[15px]'>
 			<section className='mb-[60px] max-sm:bg-dark-primary max-sm:pt-10 max-sm:pb-6 max-sm:px-6'>
@@ -169,9 +171,12 @@ export const Home = () => {
 					</div>
 
 					{screenSM ? (
-						<Swiper>
+						<Swiper className='mt-[35px]'>
 							{dataPopularProduct?.map((obj, i) => (
-								<SwiperSlide key={i}>
+								<SwiperSlide
+									className=' flex justify-center items-center'
+									key={i}
+								>
 									<CardProduct {...obj} />
 								</SwiperSlide>
 							))}
