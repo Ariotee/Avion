@@ -17,6 +17,7 @@ import {
 // Import Swiper styles
 import 'swiper/css'
 
+import Features from '../images/features.png'
 import HeroIll from '../images/heroILL.png'
 
 export const Home = () => {
@@ -27,8 +28,6 @@ export const Home = () => {
 	const screenSM = useMediaQuery({
 		query: '(max-width: 640px)',
 	})
-
-	// const CustomSwiper = new Swiper()
 
 	return (
 		<main className='my-[60px] max-sm:my-0 max-md:my-[15px]'>
@@ -238,6 +237,51 @@ export const Home = () => {
 							ranges, sales, pop up stores and more
 						</Textarea>
 						<JoinInput res={'max-sm:px-4'} resForm={'max-sm:'} />
+					</div>
+				</div>
+			</section>
+
+			<section>
+				<div className='flex justify-between pl-[max(24px,calc(100%-1232px)/2)] max-lg:flex-col max-lg:p-0 max-lg:items-center'>
+					<div className='flex flex-col justify-between py-16 pr-8 max-xl:pr-0 max-xl:py-4 max-md:w-auto max-md:px-6 max-md:gap-16'>
+						<div className='flex flex-col gap-6'>
+							<TypographyH2
+								color={'text-dark-primary'}
+								size={'text-2xl'}
+								res={'w-11/12'}
+							>
+								From a studio in London to a global brand with over 400 outlets
+							</TypographyH2>
+							<Textarea
+								res={'w-2/3 max-xl:w-11/12'}
+								color={'text-[#505977]'}
+								size={'text-base'}
+							>
+								When we started Avion, the idea was simple. Make high quality
+								furniture affordable and available for the mass market.
+							</Textarea>
+							<Textarea
+								res={'w-2/3 max-xl:w-11/12'}
+								color={'text-[#505977]'}
+								size={'text-base'}
+							>
+								Handmade, and lovingly crafted furniture and homeware is what we
+								live, breathe and design so our Chelsea boutique become the
+								hotbed for the London interior design community.
+							</Textarea>
+						</div>
+
+						<Button
+							bg_color={'bg-light-gray'}
+							text_color={'text-dark-primary'}
+							res={'sm:w-[150px]'}
+							type={'disabled'}
+						>
+							Get in touch
+						</Button>
+					</div>
+					<div className='md:min-w-[calc(100%_-_720px)] w-full'>
+						<img src={Features} alt='Features' className='w-full' />
 					</div>
 				</div>
 			</section>
