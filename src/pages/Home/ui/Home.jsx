@@ -30,7 +30,7 @@ export const Home = () => {
 	})
 
 	return (
-		<main className='my-[60px] max-sm:my-0 max-md:my-[15px]'>
+		<main className='mt-[60px] max-sm:my-0 max-md:mt-[15px]'>
 			<section className='mb-[60px] max-sm:bg-dark-primary max-sm:pt-10 max-sm:pb-6 max-sm:px-6'>
 				<div className='container max-sm:p-0'>
 					<div className='sm:flex'>
@@ -236,7 +236,13 @@ export const Home = () => {
 							Sign up for our newsletter and receive exclusive offers on new
 							ranges, sales, pop up stores and more
 						</Textarea>
-						<JoinInput res={'max-sm:px-4'} resForm={'max-sm:'} />
+						<JoinInput
+							res={'max-sm:px-4'}
+							resForm={'max-sm:'}
+							bg_color_btn={'bg-dark-primary'}
+							text_color_btn={'text-white'}
+							bg_color_input={'bg-light-gray'}
+						/>
 					</div>
 				</div>
 			</section>
