@@ -6,6 +6,7 @@ import { Button } from '../../../shared/ui/buttons'
 import { Textarea } from '../../../shared/ui/textarea'
 import { TypographyH2 } from '../../../shared/ui/typography'
 import { Card, CardProduct } from '../../../shared/ui/cards'
+import { JoinInput } from '../../../shared/ui/InputFields'
 
 import {
 	getDataCardBrand,
@@ -208,6 +209,35 @@ export const Home = () => {
 								View collection
 							</Button>
 						</Link>
+					</div>
+				</div>
+			</section>
+
+			<section className='bg-light-gray py-14 mt-12 max-sm:p-0 max-sm:bg-inherit'>
+				<div className='container'>
+					<div
+						className='flex flex-col items-center py-16 px-[350px] gap-4 bg-white
+								   max-[1120px]:px-44
+								   max-md:px-0'
+					>
+						<TypographyH2
+							color={'text-dark-primary'}
+							size={'text-4xl'}
+							res={'text-center max-md:text-2xl'}
+						>
+							Join the club and get the benefits
+						</TypographyH2>
+						<Textarea
+							color={'text-dark-primary'}
+							size={'text-base'}
+							res={
+								'text-center max-md:w-2/3 max-sm:w-11/12 max-sm:text-sm max-[1120px]:w-3/4'
+							}
+						>
+							Sign up for our newsletter and receive exclusive offers on new
+							ranges, sales, pop up stores and more
+						</Textarea>
+						<JoinInput res={'max-sm:px-4'} resForm={'max-sm:'} />
 					</div>
 				</div>
 			</section>
