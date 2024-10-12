@@ -18,15 +18,14 @@ export const Header = () => {
 					<div className='font-ibm font-normal text-2xl text-dark-hard'>
 						<Link to={'/'}>Avion</Link>
 					</div>
-					<div
-						className='flex justify-between items-center cursor-pointer gap-4'
-						onClick={notify}
-					>
+					<div className='flex justify-between items-center cursor-pointer gap-4'>
 						<div className='block md:hidden'>
 							<SearchInput />
 						</div>
 						<CartIcon />
-						<ProfileIcon />
+						<Link to={'/auth'}>
+							<ProfileIcon />
+						</Link>
 						<div className='block md:hidden'>
 							<BurgerIcon />
 						</div>
