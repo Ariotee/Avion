@@ -35,3 +35,15 @@ export const JoinInput = ({
 		</form>
 	)
 }
+
+export const AuthInput = ({ name, type, register, placeholder }) => {
+	return (
+		<input
+			className='block font-ibm text-base font-normal text-gray-600 leading-[150%] py-3 px-4 border border-gray-400 rounded-sm'
+			placeholder={placeholder}
+			{...register(name)}
+			name={name}
+			type={type}
+		/>
+	)
+}
