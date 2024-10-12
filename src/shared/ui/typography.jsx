@@ -6,7 +6,7 @@ export const TypographyH2 = ({
 }) => {
 	return (
 		<h2
-			className={`${color} ${size} ${res} font-normal font-ibm leading-[140%]`}
+			className={`${color} ${size} ${res} font-medium font-ibm leading-[140%]`}
 		>
 			{children}
 		</h2>
